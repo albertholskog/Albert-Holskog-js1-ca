@@ -13,7 +13,7 @@ async function uniAPI() {
       if (i === 12) {
         break;
       }
-      uniContainer.innerHTML += `<a href="/details.html?name=${uniResult[i].name}&country=norway/">
+      uniContainer.innerHTML += `<a class="linkUni" href="/details.html?name=${uniResult[i].name}&country=norway/">
                                             <div><h2>${uniResult[i].country}</h2>
                                             <h2>${uniResult[i].name}</h2>
                                             <h2>${uniResult[i].alpha_two_code}</h2>
@@ -22,7 +22,7 @@ async function uniAPI() {
     }
   } catch (err) {
     console.log(err);
-    uniContainer.innerHTML = "<div><h3>Could not connect to API</h3></div>;"
+    uniContainer.innerHTML = "<div><h3>Could not connect to API</h3></div>;";
   }
 }
 uniAPI();

@@ -14,23 +14,33 @@ const emailErr = document.querySelector("#emailErr");
 function validForm() {
   event.preventDefault();
 
-  if (
-    checkLength(fullName.value, 1) &&
-    checkLength(subject.value, 10) &&
-    checkLength(address.value, 25) &&
-    Emailvalid(email.value)
-  ) {
+  if (checkLength(fullName.value, 1)) {
     fullNameErr.style.display = "none";
-    subjectErr.style.display = "none";
-    addressErr.style.display = "none";
-    emailErr.style.display = "none";
-    console.log("godkjent");
+    console.log("godkjent full name");
   } else {
     fullNameErr.style.display = "block";
-    subjectErr.style.display = "block";
-    addressErr.style.display = "block";
+    console.log("fail 1");
+  }
+  if (Emailvalid(email.value)) {
+    emailErr.style.display = "none";
+    console.log("godkjent email");
+  } else {
     emailErr.style.display = "block";
-    console.log("fail");
+    console.log("fail 4");
+  }
+  if (checkLength(subject.value, 10)) {
+    subjectErr.style.display = "none";
+    console.log("godkjent subject");
+  } else {
+    subjectErr.style.display = "block";
+    console.log("fail 2");
+  }
+  if (checkLength(address.value, 25)) {
+    addressErr.style.display = "none";
+    console.log("godkjent address");
+  } else {
+    addressErr.style.display = "block";
+    console.log("fail 3");
   }
 }
 
@@ -45,6 +55,7 @@ function checkLength(value, len) {
 }
 
 function Emailvalid(email) {
-  const regEx = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/;
+  // bruker regEx fra en oppgave fra module 4
+  const regEx = /\S+@\S+\.\S+/;
   return regEx.test(email);
 }
