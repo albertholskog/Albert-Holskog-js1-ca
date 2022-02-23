@@ -21,7 +21,7 @@ function validForm() {
     fullNameErr.style.display = "block";
     console.log("fail 1");
   }
-  if (Emailvalid(email.value)) {
+  if (emailValid(email.value)) {
     emailErr.style.display = "none";
     console.log("godkjent email");
   } else {
@@ -54,7 +54,7 @@ function checkLength(value, len) {
   }
 }
 
-function Emailvalid(email) {
+function emailValid(email) {
   // bruker regEx fra en oppgave fra module 4
   const regEx = /\S+@\S+\.\S+/;
   return regEx.test(email);
