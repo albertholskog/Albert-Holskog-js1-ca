@@ -3,17 +3,18 @@
   padding: 0;
 }
 body {
-  background-color: lightgray;
+  background-color: #333030;
 }
 .formErr {
   display: none;
   color: red;
+  font-size: 1.2rem;
 }
 header {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: gray;
+  background-color: rgb(221, 216, 216);
   margin-bottom: 100px;
 }
 .indexContainer {
@@ -48,7 +49,7 @@ a:hover {
   height: 100%;
   border: 5px solid black;
   border-radius: 25px;
-  background-color: #50a690;
+  background: linear-gradient(#14ffe9, #bba5a5, #ff9100);
 }
 
 /* details page */
@@ -58,7 +59,7 @@ a:hover {
   align-items: center;
 }
 .detailsContainer div {
-  background-color: #50a690;
+  background: linear-gradient(#14ffe9, #bba5a5, #ff9100);
   border: 5px solid black;
   border-radius: 25px;
   padding: 20px;
@@ -75,7 +76,7 @@ a:hover {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  background-color: #50a690;
+  background: linear-gradient(#14ffe9, #bba5a5, #ff9100);
   min-width: 400px;
   min-height: 400px;
   border: 2px solid black;
@@ -100,19 +101,28 @@ button:hover {
 /* loading */
 
 .loading {
-  border: 10px solid black; /* Light grey */
-  border-top: 10px solid #50a690; /* Blue */
+  background: linear-gradient(#14ffe9, #000000, #ff9100);
+  border: 3px solid rgb(0, 0, 0);
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  animation: spin 1.5s ease-in-out infinite;
+  width: 150px;
+  height: 150px;
+  animation: spin 1.5s ease-out infinite;
 }
 
 @keyframes spin {
   0% {
     transform: rotate(0deg);
   }
+  50% {
+    transform: rotate(30deg);
+  }
   100% {
     transform: rotate(360deg);
   }
+}
+.errMs {
+  font-size: 2.5rem;
+  background: linear-gradient(#14ffe9, #ac9595, #ff9100);
+  font-weight: 900;
+  border-radius: 10px;
 }

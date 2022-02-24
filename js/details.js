@@ -13,19 +13,18 @@ console.log(url);
 const detailsContainer = document.querySelector(".detailsContainer");
 const loadingContainer = document.querySelector(".loading");
 async function detailsAPI() {
-    try {
-        const response = await fetch(url);
-        const detailsData = await response.json();
-        console.log(detailsData[0]);
-        // detailsContainer.innerHTML = "";
-        detailsContainer.innerHTML = `<div><h2>Country: ${detailsData[0].country}</h2>
+  try {
+    const response = await fetch(url);
+    const detailsData = await response.json();
+    console.log(detailsData[0]);
+    // detailsContainer.innerHTML = "";
+    detailsContainer.innerHTML = `<div><h2>Country: ${detailsData[0].country}</h2>
                                         <h2>Name of school: ${detailsData[0].name}</h2>
                                         <h2>School website: ${detailsData[0].web_pages}</h2></div>`;
-    } catch (err) {
-        detailsContainer.innerHTML =
-            "<div><p>No school fund, Api not woriking</p></div>";
-        console.log("error");
-    }
+  } catch (err) {
+    detailsContainer.innerHTML = `<div class="errMs"><p>No school fund, Api not woriking</p></div>`;
+    console.log("error");
+  }
 }
 
 detailsAPI();

@@ -22,7 +22,7 @@ async function uniAPI() {
     }
   } catch (err) {
     console.log(err);
-    uniContainer.innerHTML = "<div><h3>Could not connect to API</h3></div>;";
+    uniContainer.innerHTML = `<div class="errMs"><p>Could not connect to API</p></div>`;
   }
 }
 uniAPI();
